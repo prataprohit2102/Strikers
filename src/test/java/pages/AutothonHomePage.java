@@ -45,16 +45,13 @@ public class AutothonHomePage  {
 	}
 	
 	
-	public void enterUserNameAdminFieldData(String strUserNameAdmin){
-		wait.until(ExpectedConditions.visibilityOf(UserNameAdmin));
-		UserNameAdmin.sendKeys(strUserNameAdmin);
-	}
+
 	
 	
-	public void enterPasswordAdminFieldData(String strPasswordAdmin){
-		wait.until(ExpectedConditions.visibilityOf(PassWordAdmin));
-		PassWordAdmin.sendKeys(strPasswordAdmin);
-	}
+//	public void enterPasswordAdminFieldData(String strPasswordAdmin){
+//		wait.until(ExpectedConditions.visibilityOf(PassWordAdmin));
+//		PassWordAdmin.sendKeys(strPasswordAdmin);
+//	}
 	
 	/**
 	 * This method is used to click login button.
@@ -77,13 +74,7 @@ public class AutothonHomePage  {
 		return flag;
 	}
 	
-	/**
-	 * This method is used 
-	 */
-	public void clickAddMovieLink(){
-		wait.until(ExpectedConditions.visibilityOf(EleAddMovieLink));
-		EleAddMovieLink.click();
-	}
+
 	
 	
 //Autothon elements
@@ -101,5 +92,44 @@ public class AutothonHomePage  {
  WebElement EleAdminMenu;
  @FindBy(xpath = "//a[text()='add movie']")
  WebElement EleAddMovieLink;
+
+ @FindBy(xpath = "//input[@name='title']")
+ WebElement EleTitle;
+
+//public void enterUserNameAdminFieldData(String arg1, String arg2) {
+//	wait.until(ExpectedConditions.visibilityOf(UserNameAdmin));
+//	UserNameAdmin.sendKeys(strUserNameAdmin);
+//	PassWordAdmin.sendKeys(strPasswordAdmin);
+//	
+//}
+
+public void enterUserNameAdminFieldData(String arg1, String arg2) {
+	wait.until(ExpectedConditions.visibilityOf(UserNameAdmin));
+	UserNameAdmin.sendKeys(arg1);
+	PassWordAdmin.sendKeys(arg2);
 }
 
+/**
+ * This method is used to click Add movie link.
+ */
+public void clickAddMovieLink(){
+	wait.until(ExpectedConditions.visibilityOf(EleAddMovieLink));
+	EleAddMovieLink.click();
+}
+
+/**
+ * This method is used to enter movie title field.
+ * @param strMovietitle
+ */
+public void enterTitleField(String strMovietitle,String arg2,String arg3,String arg4,String arg5){
+	wait.until(ExpectedConditions.visibilityOf(EleTitle));
+	EleTitle.sendKeys(strMovietitle);
+	EleTitle.sendKeys(arg2);
+	EleTitle.sendKeys(arg3);
+	EleTitle.sendKeys(arg4);
+	EleTitle.sendKeys(arg5);
+	
+}
+
+
+}
